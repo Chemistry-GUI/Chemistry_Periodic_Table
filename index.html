@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Periodic Table with detailed element information">
+  <title>ElementX — Interactive Periodic Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span>⚛</span><div><strong>Master AI</strong><small>Interactive Periodic Table</small></div></div>
+    <div class="actions">
+      <button id="themeBtn" class="icon-btn" title="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CHEMISTRY • 118 ELEMENTS</p>
+        <h1>Explore the <span>Periodic Table</span></h1>
+        <p class="subtitle">Click any element to view its properties, electron configuration, discovery and other information.</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="Search by name, symbol, or atomic number…">
+        <button id="clearSearch">×</button>
+      </div>
+      <select id="categoryFilter">
+        <option value="all">All categories</option>
+        <option value="alkali metal">Alkali metals</option>
+        <option value="alkaline earth metal">Alkaline earth metals</option>
+        <option value="transition metal">Transition metals</option>
+        <option value="post-transition metal">Post-transition metals</option>
+        <option value="metalloid">Metalloids</option>
+        <option value="nonmetal">Nonmetals</option>
+        <option value="halogen">Halogens</option>
+        <option value="noble gas">Noble gases</option>
+        <option value="lanthanide">Lanthanides</option>
+        <option value="actinide">Actinides</option>
+      </select>
+    </section>
+
+    <section class="legend">
+      <span><i class="alkali"></i>Alkali</span><span><i class="alkaline"></i>Alkaline Earth</span>
+      <span><i class="transition"></i>Transition</span><span><i class="post"></i>Post-transition</span>
+      <span><i class="metalloid"></i>Metalloid</span><span><i class="nonmetal"></i>Nonmetal</span>
+      <span><i class="halogen"></i>Halogen</span><span><i class="noble"></i>Noble Gas</span>
+      <span><i class="lanthanide"></i>Lanthanide</span><span><i class="actinide"></i>Actinide</span>
+    </section>
+
+    <section class="table-scroll">
+      <div id="periodicTable" class="periodic-table" aria-label="Periodic table"></div>
+    </section>
+
+    <section class="hint">
+      <span>💡</span> Tip: Click an element card to open its complete information panel.
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <article class="modal-card">
+      <button id="closeModal" class="close" aria-label="Close">×</button>
+      <div id="details"></div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
